@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille - Portfolio BTS SIO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav-menu">
+        <a href="acceuil.html">Accueil</a>
+        <a href="compétence.html">Compétences</a>
+        <a href="Etude.html">Études</a>
+        <a href="experience.html">Expérience</a>
+        <a href="Production.html">Productions</a>
+        <a href="Veille.html">Veille</a>
+        <a href="Contact.html">Contact</a>
+        <a href="CV bts-ajour.pdf" download class="cv-button">Télécharger mon CV</a>
+    </nav>
+    <div class="container">
+        <h1 class="page-title">Veille</h1>
+
+        <section>
+            <h2 class="section-title">Outils pour ma veille informatique</h2>
+
+            <div class="competences-grid">
+                <div class="competence-item">
+                    <img src="images/discord.png" alt="Discord" />
+                    <h3>Discord</h3>
+                    <p>Plateforme de communication pour suivre des communautés techniques, partager des ressources et participer à des discussions en temps réel.</p>
+                </div>
+
+                <div class="competence-item">
+                    <img src="images/Feedrabbit.png" alt="Feedrabbit" />
+                    <h3>Feedrabbit</h3>
+                    <p>Outil/agrégateur de flux pour rassembler les fils d'actualité et suivre facilement les nouvelles publications et articles.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title" style="margin-top:28px;">Sites recommandés</h2>
+
+            <div class="sites-grid">
+                <div class="resource-card">
+                    <div class="resource-icon" aria-hidden="true">
+                        <img src="images/bleeping.png" alt="BleepingComputer logo" class="resource-logo" />
+                    </div>
+                    <div class="resource-body">
+                        <h4>BleepingComputer</h4>
+                        <p>Forums, tutoriels et actualités axés sur la sécurité et le dépannage.</p>
+                        <div>
+                            <a href="https://www.bleepingcomputer.com" class="resource-link" target="_blank" rel="noopener noreferrer">Visiter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon" aria-hidden="true">
+                        <img src="images/Thn.png" alt="The Hacker News logo" class="resource-logo" />
+                    </div>
+                    <div class="resource-body">
+                        <h4>The Hacker News</h4>
+                        <p>Site d'actualité sur la sécurité, les vulnérabilités et les tendances IT.</p>
+                        <div>
+                            <a href="https://thehackernews.com" class="resource-link" target="_blank" rel="noopener noreferrer">Visiter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon" aria-hidden="true">
+                        <img src="images/IT.jfif" alt="IT-Connect logo" class="resource-logo" />
+                    </div>
+                    <div class="resource-body">
+                        <h4>IT-Connect (Actualités)</h4>
+                        <p>Actualités et tutoriels en français, orientés infra, cloud et sécurité.</p>
+                        <div>
+                            <a href="https://www.it-connect.fr/actualites" class="resource-link" target="_blank" rel="noopener noreferrer">Visiter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Articles sélectionnés</h2>
+
+            <div class="etude-list">
+                <!-- Article ajouté : Microsoft ships emergency patch -->
+                <article class="competence-item" style="text-align:left;">
+                    <img src="images/banniere_bleep.jpg" alt="BleepingComputer - emergency patch" style="width:100%; display:block; border-radius:10px; margin-bottom:12px;">
+                    <h3>Microsoft ships emergency patch to fix Windows 11 startup failures</h3>
+                    <p class="subtitle">📅 2 juin 2025 — BleepingComputer</p>
+                    <p>Microsoft a publié une mise à jour hors-bande (KB5062170) pour corriger un problème connu provoquant des échecs de démarrage sur certaines machines Windows 11 après l'installation du correctif de sécurité KB5058405 (mai 2025). Les systèmes affectés affichent des erreurs de récupération 0xc0000098 liées à ACPI.sys, indiquant que le système d'exploitation ne peut pas être chargé.</p>
+                    <p>Le problème touche principalement les environnements d'entreprise : machines virtuelles Azure, Azure Virtual Desktop, et VMs hébergées sur Citrix ou Hyper-V. Microsoft fournit des paquets MSU autonomes dans le Microsoft Update Catalog pour installer manuellement la correction d'urgence.</p>
+                    <p><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-ships-emergency-patch-to-fix-windows-11-installation-issues" target="_blank" rel="noopener noreferrer">Lire l'article complet sur BleepingComputer</a></p>
+                </article>
+
+                <!-- Exemple d'article : copiez/collez et remplacez par vos articles -->
+                <article class="competence-item" style="text-align:left;">
+                    <img src="images/hack_banner.webp" alt="The Hacker News - Sturnus" style="width:100%; display:block; border-radius:10px; margin-bottom:12px;">
+                    <h3>New Sturnus Android trojan quietly steals data from infected devices</h3>
+                    <p class="subtitle">📅 Nov 2025 — The Hacker News</p>
+                    <p>Un nouveau cheval de Troie Android nommé "Sturnus" a été repéré, opérant discrètement pour voler des données sensibles depuis les appareils infectés. Il se propage via des applications malveillantes et exploite des permissions étendues pour collecter messages, contacts et informations d'authentification, tout en évitant la détection grâce à des techniques de furtivité.</p>
+                    <p>Les administrateurs et utilisateurs sont invités à vérifier les autorisations des applications, éviter les sources non officielles et installer les mises à jour de sécurité. Plus d'informations et l'analyse complète sont disponibles sur The Hacker News.</p>
+                    <p><a href="https://thehackernews.com/2025/11/new-sturnus-android-trojan-quietly.html" target="_blank" rel="noopener noreferrer">Lire l'article sur The Hacker News</a></p>
+                </article>
+
+
+            </div>
+        </section>
+
+        <div style="text-align:center; margin-top:30px;">
+            <a href="acceuil.html" class="cv-download">Retour à l'accueil</a>
+        </div>
+    </div>
+</body>
+</html>

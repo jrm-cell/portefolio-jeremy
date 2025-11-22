@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productions - Portfolio BTS SIO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav-menu">
+        <a href="acceuil.html">Accueil</a>
+        <a href="compétence.html">Compétences</a>
+        <a href="Etude.html">Études</a>
+        <a href="experience.html">Expérience</a>
+        <a href="Production.html">Productions</a>
+        <a href="Veille.html">Veille</a>
+        <a href="Contact.html">Contact</a>
+        <a href="CV bts-ajour.pdf" download class="cv-button">Télécharger mon CV</a>
+    </nav>
+    <div class="container">
+        <!-- Formulaire de code d'accès -->
+        <div id="passwordForm" class="password-form">
+            <h2>Accès Protégé</h2>
+            <p>Veuillez entrer le code d'accès pour voir les productions :</p>
+            <input type="password" id="passwordInput" class="password-input" placeholder="Code d'accès" autocomplete="off">
+            <br>
+            <button onclick="checkPassword()" class="password-submit">Accéder</button>
+            <p id="passwordError" class="password-error">Code incorrect. Veuillez réessayer.</p>
+        </div>
+
+        <!-- Contenu protégé -->
+        <div id="protectedContent" class="content-locked">
+            <h1 class="page-title">Productions</h1>
+            <p>Contenu de la page Productions à compléter...</p>
+        </div>
+    </div>
+
+    <script>
+        // Hash SHA-256 du mot de passe (le mot de passe en clair n'est plus visible)
+        // Pour générer un nouveau hash, utilisez la console: await hashPassword("votre_mot_de_passe")
+        const PASSWORD_HASH = "4f1ebc5b0d962126563fc2e7e0ce48d9f4bec6b690dbfc9abf3b4c16c67099b7"; // Hash SHA-256 de "Mot2pass"
+
+        // Fonction pour hasher un mot de passe avec SHA-256
+        async function hashPassword(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            return hashHex;
+        }
+
+        // Fonction pour vérifier le mot de passe
+        async function checkPassword() {
+            const input = document.getElementById('passwordInput');
+            const error = document.getElementById('passwordError');
+            const submitButton = document.querySelector('.password-submit');
+            
+            // Désactiver le bouton pendant la vérification
+            submitButton.disabled = true;
+            submitButton.textContent = 'Vérification...';
+            
+            try {
+                // Hasher le mot de passe entré
+                const inputHash = await hashPassword(input.value);
+                
+                // Comparer avec le hash stocké
+                if (inputHash === PASSWORD_HASH) {
+                    // Code correct
+                    showContent();
+                } else {
+                    // Code incorrect
+                    error.classList.add('show');
+                    input.value = '';
+                    input.focus();
+                }
+            } catch (err) {
+                console.error('Erreur lors du hash:', err);
+                error.classList.add('show');
+                error.textContent = 'Erreur de vérification. Veuillez réessayer.';
+            } finally {
+                // Réactiver le bouton
+                submitButton.disabled = false;
+                submitButton.textContent = 'Accéder';
+            }
+        }
+
+        function showContent() {
+            document.getElementById('passwordForm').style.display = 'none';
+            document.getElementById('protectedContent').classList.remove('content-locked');
+            document.getElementById('protectedContent').classList.add('content-unlocked');
+        }
+
+        // Permettre la soumission avec la touche Entrée
+        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+    </script>
+</body>
+</html>
